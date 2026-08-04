@@ -763,3 +763,78 @@ body {
     font-size: 0.85rem;
     border-top: 1px solid var(--border-color);
 }
+/* ==========================================================================
+   MOBILE & TOUCH RESPONSIVE STYLES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Navbar scaling & alignment */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 4%;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* 2. Hero Section scaling */
+    .hero {
+        padding: 60px 5% 40px 5%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* 3. Single-column Project Grid on mobile */
+    .cyber-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* 4. Modal adjustments for smaller screens */
+    .modal-window {
+        padding: 20px;
+        max-height: 92vh;
+    }
+
+    .carousel-container {
+        height: 220px;
+    }
+
+    /* 5. ICE Breaker Mini-game Touch Grid */
+    .hack-body {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .hack-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+
+    .matrix-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .matrix-node {
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+}
