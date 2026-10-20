@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matan Barash | Game PM & Systems Design Portfolio</title>
+    <title>Matan Barash | Game Systems & Technical Design Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
@@ -68,15 +68,24 @@
             </div>
         </section>
 
-        <!-- CYBERPUNK PROJECT NEXUS GRID (7 PROJECTS) -->
+        <!-- CYBERPUNK PROJECT NEXUS GRID (FILTERABLE) -->
         <section id="projects" class="cyber-container">
             <div class="module-tag">MODULE_02</div>
             <h2 class="section-title">PROJECT NEXUS</h2>
 
+            <!-- FILTER CONTROLS -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">[ ALL_SYS ]</button>
+                <button class="filter-btn" data-filter="pc">[ PC_GAMES ]</button>
+                <button class="filter-btn" data-filter="mobile">[ MOBILE ]</button>
+                <button class="filter-btn" data-filter="vr">[ VR / XR ]</button>
+                <button class="filter-btn" data-filter="concept">[ CONCEPT_GAMES ]</button>
+            </div>
+
             <div class="cyber-grid">
                 
                 <!-- 01. CHRONO TRACE -->
-                <article class="cyber-card" onclick="openProjectModal('chrono')">
+                <article class="cyber-card" data-category="vr" onclick="openProjectModal('chrono')">
                     <div class="cyber-card-media">
                         <span class="card-num">01 / 07</span>
                         <span class="card-status status-active">• DEPLOYED</span>
@@ -98,7 +107,7 @@
                 </article>
 
                 <!-- 02. PIRATES OF THE HIGH SEAS -->
-                <article class="cyber-card" onclick="openProjectModal('pirates')">
+                <article class="cyber-card" data-category="pc" onclick="openProjectModal('pirates')">
                     <div class="cyber-card-media">
                         <span class="card-num">02 / 07</span>
                         <span class="card-status status-active">• ACTIVE</span>
@@ -120,7 +129,7 @@
                 </article>
 
                 <!-- 03. 2.5D RPG -->
-                <article class="cyber-card" onclick="openProjectModal('rpg')">
+                <article class="cyber-card" data-category="pc" onclick="openProjectModal('rpg')">
                     <div class="cyber-card-media">
                         <span class="card-num">03 / 07</span>
                         <span class="card-status status-active">• ACTIVE</span>
@@ -142,7 +151,7 @@
                 </article>
 
                 <!-- 04. THE AMBER FORGE -->
-                <article class="cyber-card" onclick="openProjectModal('amber')">
+                <article class="cyber-card" data-category="concept mobile" onclick="openProjectModal('amber')">
                     <div class="cyber-card-media">
                         <span class="card-num">04 / 07</span>
                         <span class="card-status status-spec">• SPEC / GDD</span>
@@ -164,7 +173,7 @@
                 </article>
 
                 <!-- 05. KING'S ESCAPE -->
-                <article class="cyber-card" onclick="openProjectModal('kings')">
+                <article class="cyber-card" data-category="mobile pc" onclick="openProjectModal('kings')">
                     <div class="cyber-card-media">
                         <span class="card-num">05 / 07</span>
                         <span class="card-status status-active">• ACTIVE</span>
@@ -186,7 +195,7 @@
                 </article>
 
                 <!-- 06. SINS OF THE GARRISON -->
-                <article class="cyber-card" onclick="openProjectModal('sins')">
+                <article class="cyber-card" data-category="pc" onclick="openProjectModal('sins')">
                     <div class="cyber-card-media">
                         <span class="card-num">06 / 07</span>
                         <span class="card-status status-active">• ACTIVE</span>
@@ -208,7 +217,7 @@
                 </article>
 
                 <!-- 07. EIFFEL ASCENT -->
-                <article class="cyber-card" onclick="openProjectModal('eiffel')">
+                <article class="cyber-card" data-category="vr concept" onclick="openProjectModal('eiffel')">
                     <div class="cyber-card-media">
                         <span class="card-num">07 / 07</span>
                         <span class="card-status status-active">• PROTO</span>

@@ -56,18 +56,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    enterBtn.addEventListener('click', () => {
-        playDecryptionSound();
-        landing.classList.add('fade-out');
-        mainContent.classList.remove('hidden');
+    if (enterBtn) {
+        enterBtn.addEventListener('click', () => {
+            playDecryptionSound();
+            landing.classList.add('fade-out');
+            mainContent.classList.remove('hidden');
 
-        setTimeout(() => {
-            landing.style.display = 'none';
-        }, 800);
-    });
+            setTimeout(() => {
+                landing.style.display = 'none';
+            }, 800);
+        });
+    }
 
     initHackGame();
+    initProjectFilters();
 });
+
+// ==========================================================================
+// CATEGORY FILTER LOGIC
+// ==========================================================================
+
+function initProjectFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.cyber-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const categories = (card.getAttribute('data-category') || '').split(' ');
+                
+                if (filterValue === 'all' || categories.includes(filterValue)) {
+                    card.classList.remove('card-hidden');
+                } else {
+                    card.classList.add('card-hidden');
+                }
+            });
+        });
+    });
+}
 
 // ==========================================================================
 // DYNAMIC MODAL DATA (YOUTUBE EMBED INTEGRATION)
@@ -415,12 +446,10 @@ function initHackGame() {
 
     updateAttemptsDisplay();
 
-    // 1. Shuffle pool to choose winning target sequence
     const pool = [...matrixHexCodes].sort(() => 0.5 - Math.random());
     targetSequence = pool.slice(0, 3);
     targetSeqDisplay.innerText = targetSequence.join(" ");
 
-    // 2. Reshuffle grid array again so target nodes are scattered randomly across the 12 buttons
     const gridDisplayCodes = [...pool].sort(() => 0.5 - Math.random());
 
     gridContainer.innerHTML = "";
