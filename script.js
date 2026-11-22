@@ -110,9 +110,8 @@ const projectData = {
         role: "Lead Designer & Product Manager | VR Parkour Prototype",
         gallery: [
             { type: 'iframe', src: 'https://www.youtube.com/embed/oV1I2GuBmMg?rel=0' },
-            { type: 'image', src: 'assets/screenshots/chrono-1.png', alt: 'Chrono Trace VR Parkour' },
-            { type: 'image', src: 'assets/screenshots/chrono-2.png', alt: 'Locomotion Mechanics' },
-            { type: 'image', src: 'assets/screenshots/chrono-3.png', alt: 'Environmental Narrative' }
+            { type: 'image', src: 'assets/screenshots/chrono-1.webp', alt: 'Chrono Trace VR Parkour' },
+            { type: 'image', src: 'assets/screenshots/chrono-2.webp', alt: 'Locomotion Mechanics' }
         ],
         features: [
             "<strong>Physics-Based VR Locomotion:</strong> Authored climbing mechanics using Rigidbody calculations and momentum retention.",
@@ -126,9 +125,9 @@ const projectData = {
         role: "Systems & Combat Designer | Hack 'n' Slash Encounter",
         gallery: [
             { type: 'iframe', src: 'https://www.youtube.com/embed/ygkn0eqHeRE?rel=0' },
-            { type: 'image', src: 'assets/screenshots/pirates-1.png', alt: 'Pirates Gameplay Encounter' },
-            { type: 'image', src: 'assets/screenshots/pirates-2.png', alt: 'Swordplay & Blocking System' },
-            { type: 'image', src: 'assets/screenshots/pirates-3.png', alt: 'Boss Phase & Cutscene Sync' }
+            { type: 'image', src: 'assets/screenshots/pirates-1.webp', alt: 'Pirates Gameplay Encounter' },
+            { type: 'image', src: 'assets/screenshots/pirates-2.webp', alt: 'Swordplay & Blocking System' },
+            { type: 'image', src: 'assets/screenshots/pirates-3.webp', alt: 'Boss Phase & Cutscene Sync' }
         ],
         features: [
             "<strong>Frame-Accurate Melee Combat:</strong> Structured attack and block loops relying on precise input registration.",
@@ -142,8 +141,8 @@ const projectData = {
         role: "Systems & Gameplay Designer | Turn-Based Combat Prototype",
         gallery: [
             { type: 'iframe', src: 'https://www.youtube.com/embed/B3PK0brdMUI?rel=0' },
-            { type: 'image', src: 'assets/screenshots/rpg-1.png', alt: '2.5D Turn-Based Encounter' },
-            { type: 'image', src: 'assets/screenshots/rpg-2.png', alt: 'Party Attack Interface' }
+            { type: 'image', src: 'assets/screenshots/rpg-1.webp', alt: '2.5D Turn-Based Encounter' },
+            { type: 'image', src: 'assets/screenshots/rpg-2.webp', alt: 'Party Attack Interface' }
         ],
         features: [
             "<strong>Decoupled Input Architecture:</strong> Utilized the Unity Input System to separate input logic from core gameplay code, allowing turn-based party commands to stack cleanly without execution interference.",
@@ -156,9 +155,9 @@ const projectData = {
         title: "The Amber Forge",
         role: "Game PM & Economy Designer | Midcore Mobile Tycoon Concept",
         gallery: [
-            { type: 'image', src: 'assets/screenshots/amber-1.png', alt: 'Amber Forge Main Concept' },
-            { type: 'image', src: 'assets/screenshots/amber-2.png', alt: 'Item Crafting Economy Spreadsheet' },
-            { type: 'image', src: 'assets/screenshots/amber-3.png', alt: 'Live-Ops Seasonal Event Cadence' }
+            { type: 'image', src: 'assets/screenshots/amber-1.webp', alt: 'Amber Forge Main Concept' },
+            { type: 'image', src: 'assets/screenshots/amber-2.webp', alt: 'Item Crafting Economy Spreadsheet' },
+            { type: 'image', src: 'assets/screenshots/amber-3.webp', alt: 'Live-Ops Seasonal Event Cadence' }
         ],
         features: [
             "<strong>Time-Based Crafting Queues:</strong> Balanced multi-tier item creation timers with raw material supply chains.",
@@ -172,9 +171,9 @@ const projectData = {
         title: "King's Escape",
         role: "Systems & Gameplay Developer | 3D Endless Runner",
         gallery: [
-            { type: 'image', src: 'assets/screenshots/kings-1.png', alt: 'King\'s Escape Gameplay' },
-            { type: 'image', src: 'assets/screenshots/kings-2.png', alt: 'Game Over Logic & Scoring' },
-            { type: 'image', src: 'assets/screenshots/kings-3.png', alt: 'Lane Shifting & Obstacles' }
+            { type: 'image', src: 'assets/screenshots/kings-1.webp', alt: 'King\'s Escape Gameplay' },
+            { type: 'image', src: 'assets/screenshots/kings-2.webp', alt: 'Game Over Logic & Scoring' },
+            { type: 'image', src: 'assets/screenshots/kings-3.webp', alt: 'Lane Shifting & Obstacles' }
         ],
         features: [
             "<strong>Procedural Chunk Pooling:</strong> Memory-managed object pooling recycling terrain chunks behind the player camera.",
@@ -188,9 +187,9 @@ const projectData = {
         role: "AI & Systems Designer | Horror Slasher Prototype",
         gallery: [
             { type: 'iframe', src: 'https://www.youtube.com/embed/1LPm2eSRojk?rel=0' },
-            { type: 'image', src: 'assets/screenshots/sins-1.png', alt: 'Sins Encounter' },
-            { type: 'image', src: 'assets/screenshots/sins-2.png', alt: 'Killer Sightlines' },
-            { type: 'image', src: 'assets/screenshots/sins-3.png', alt: 'Hiding & Objective Mechanics' }
+            { type: 'image', src: 'assets/screenshots/sins-1.webp', alt: 'Sins Encounter' },
+            { type: 'image', src: 'assets/screenshots/sins-2.webp', alt: 'Killer Sightlines' },
+            { type: 'image', src: 'assets/screenshots/sins-3.webp', alt: 'Hiding & Objective Mechanics' }
         ],
         features: [
             "<strong>Dual Vision & Sound Detection:</strong> Raycasting line-of-sight paired with player noise broadcast radiuses.",
@@ -204,8 +203,8 @@ const projectData = {
         role: "VR Gameplay Developer | WWII Climbing Proof-of-Concept",
         gallery: [
             { type: 'iframe', src: 'https://www.youtube.com/embed/9lzC8o3u1r4?rel=0' },
-            { type: 'image', src: 'assets/screenshots/eiffel-1.png', alt: 'Eiffel Ascent VR Climbing' },
-            { type: 'image', src: 'assets/screenshots/eiffel-2.png', alt: 'Tower Lattice Collision' }
+            { type: 'image', src: 'assets/screenshots/eiffel-1.webp', alt: 'Eiffel Ascent VR Climbing' },
+            { type: 'image', src: 'assets/screenshots/eiffel-2.webp', alt: 'Tower Lattice Collision' }
         ],
         features: [
             "<strong>VR XR Climbing Interactors:</strong> Direct hand tracking mapped to ironwork structural grab points.",
@@ -246,7 +245,7 @@ function openProjectModal(key) {
             </div>`;
         } else {
             return `<div class="carousel-slide ${activeClass}">
-                <img src="${item.src}" alt="${item.alt || 'Project Image'}">
+                <img src="${item.src}" alt="${item.alt || 'Project Image'}" loading="lazy" decoding="async">
             </div>`;
         }
     }).join('');
@@ -349,7 +348,7 @@ const gameQuotes = [
         speaker: "Joel Miller"
     },
     {
-        quote: "Did I ever tell you what the definition of insanity is? Insanity is doing the exact... same fucking thing... over and over again expecting... shit to change.",
+        quote: "Did I ever tell you what the definition of insanity is? Insanity is doing the exact same thing over and over again, expecting things to change.",
         game: "Far Cry 3",
         speaker: "Vaas Montenegro"
     },
@@ -374,7 +373,7 @@ const gameQuotes = [
         speaker: "Pork Bun Vendor"
     },
     {
-        quote: "Welcome to Pandora, kiddos! ... The moral of the story is: you're a total bitch.",
+        quote: "Wanna hear a joke? Bandits.",
         game: "Borderlands 2",
         speaker: "Handsome Jack"
     },
