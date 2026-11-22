@@ -3,326 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matan Barash | Game Systems & Technical Design Portfolio</title>
+    <title>Matan Barash | Game Designer: Level, Systems &amp; Technical Art</title>
+    <meta name="description" content="Portfolio of Matan Barash, game designer working on levels, combat and systems in Unity and Unreal. Featuring Fantasy Musou, a solo musou action game.">
+
+    <!-- Link previews (LinkedIn, Discord, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Matan Barash | Game Designer Portfolio">
+    <meta property="og:description" content="Levels, combat and systems in Unity and Unreal. Featuring Fantasy Musou, a solo musou action game.">
+    <meta property="og:image" content="https://hunterstormsword.github.io/porfolio/assets/og-image.jpg">
+    <meta property="og:url" content="https://hunterstormsword.github.io/porfolio/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M6 4h52l-6 56H0z' fill='%23e23a48'/%3E%3Ctext x='29' y='44' font-family='Arial Black,Arial' font-weight='900' font-style='italic' font-size='30' fill='%23fff' text-anchor='middle'%3EMB%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,700;1,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- MYSTERIOUS TERMINAL LANDING SCREEN -->
-    <section id="landing" class="landing-screen">
-        <div class="particles-bg"></div>
-        <div class="glow-orb"></div>
-        
+    <!-- SHORT INTRO: fades out on its own, any click / key / scroll skips it -->
+    <div id="landing" class="landing-screen" aria-hidden="true">
         <div class="landing-content">
-            <div class="terminal-header">
-                <span class="status-dot"></span>
-                <span class="terminal-title">DEEP_ARCHIVE // SYSTEM_CORE_V8.3</span>
-            </div>
-            
-            <p class="pre-title">[ SIGNAL DETECTED — UNKNOWN TRANSMISSION ]</p>
-            <h1 class="glitch-text" data-text="MATAN BARASH">MATAN BARASH</h1>
-            <p class="tagline">System Architect & Game PM // Decrypting core game loops...</p>
-            
-            <div class="terminal-prompt">
-                <span class="prompt-symbol">&gt;</span> <span id="typing-text">Initiate archive link?</span><span class="cursor">_</span>
-            </div>
-
-            <button id="enter-btn" class="btn-enter">
-                <span class="btn-text">INITIALIZE DECRYPTION</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </button>
+            <p class="pre-title">&gt; <span id="typing-text"></span><span class="cursor">_</span></p>
+            <p class="landing-name">MATAN BARASH</p>
+            <p class="landing-skip">click or press any key to skip</p>
         </div>
-    </section>
+    </div>
 
-    <!-- MAIN PORTFOLIO WRAPPER -->
-    <div id="main-content" class="main-content hidden">
+    <div id="main-content" class="main-content">
 
         <!-- NAVBAR -->
-        <nav class="navbar">
-            <div class="nav-brand">
-                <span class="brand-sys">MB // SYS</span>
+        <nav class="navbar" aria-label="Main">
+            <a href="#about" class="nav-brand">
+                <span class="brand-mark">MB</span>
                 <span class="logo">MATAN BARASH</span>
-            </div>
+            </a>
             <div class="nav-links">
-                <a href="#about">TERMINAL_01</a>
-                <a href="#projects">NEXUS_02</a>
-                <a href="#hack-module">MINI_GAME_03</a>
-                <a href="assets/resume.pdf" target="_blank" class="btn-resume">RESUME_PDF</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn-resume">Resume</a>
             </div>
         </nav>
 
-        <!-- HERO SECTION -->
+        <!-- HERO -->
         <section id="about" class="hero">
-            <div class="hero-hud-tag">// GAME PM // SYSTEMS ARCHITECT</div>
+            <div class="hero-tag">Game Designer // Level, Systems &amp; Technical Art</div>
             <h1>MATAN BARASH</h1>
             <p class="hero-desc">
-                Architecting interactive systems where player and program dissolve—high-performance engines, procedural worlds, real-time simulations.
+                I design and build game levels, combat and systems in Unity and Unreal, from the first greybox to the shaders and VFX.
+                Level &amp; Systems Designer at Six Minds Studio, currently solo-developing <a href="#projects" class="inline-link">Fantasy Musou</a>.
             </p>
             <div class="hero-actions">
-                <a href="#projects" class="btn-cyber-primary">[ ACCESS WORK ]</a>
-                <a href="assets/resume.pdf" target="_blank" class="btn-cyber-outline">[ ESTABLISH LINK ]</a>
+                <a href="#projects" class="btn-primary">See my work</a>
+                <a href="#contact" class="btn-outline">Get in touch</a>
             </div>
         </section>
 
-        <!-- CYBERPUNK PROJECT NEXUS GRID (FILTERABLE) -->
-        <section id="projects" class="cyber-container">
-            <div class="module-tag">MODULE_02</div>
-            <h2 class="section-title">PROJECT NEXUS</h2>
+        <!-- PROJECTS (FILTERABLE) -->
+        <section id="projects" class="container">
+            <div class="section-tag">01 // Projects</div>
+            <h2 class="section-title">Projects</h2>
 
-            <!-- FILTER CONTROLS -->
-            <div class="filter-bar">
-                <button class="filter-btn active" data-filter="all">[ ALL_SYS ]</button>
-                <button class="filter-btn" data-filter="pc">[ PC_GAMES ]</button>
-                <button class="filter-btn" data-filter="mobile">[ MOBILE ]</button>
-                <button class="filter-btn" data-filter="vr">[ VR / XR ]</button>
-                <button class="filter-btn" data-filter="concept">[ CONCEPT_GAMES ]</button>
+            <div class="filter-bar" role="group" aria-label="Filter projects">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pc">PC</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="vr">VR / XR</button>
+                <button class="filter-btn" data-filter="concept">Design Docs</button>
             </div>
 
-            <div class="cyber-grid">
+            <div class="project-grid">
 
                 <!-- 01. FANTASY MUSOU -->
-                <article class="cyber-card" data-category="pc" onclick="openProjectModal('musou')">
-                    <div class="cyber-card-media">
+                <article class="project-card featured" data-category="pc" data-project="musou" tabindex="0" role="button" aria-label="Open project: Fantasy Musou">
+                    <div class="card-media">
                         <span class="card-num">01 / 08</span>
-                        <span class="card-status status-spec">• IN DEVELOPMENT</span>
-                        <img src="assets/screenshots/warriors-1.webp" alt="Fantasy Musou" class="cyber-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        <div class="cyber-placeholder">[ FANTASY MUSOU ]</div>
-                        <div class="cyber-hover-overlay">
-                            <span class="target-reticle">+ FANTASY MUSOU</span>
-                        </div>
+                        <span class="card-status status-wip">IN DEVELOPMENT</span>
+                        <img src="assets/screenshots/warriors-1.webp" alt="Fantasy Musou main menu" class="card-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                        <div class="card-placeholder">[ FANTASY MUSOU ]</div>
+                        <div class="card-hover"><span class="card-open">Open project +</span></div>
                     </div>
-                    <div class="cyber-card-info">
+                    <div class="card-info">
                         <h3>FANTASY MUSOU</h3>
-                        <div class="cyber-meta-grid">
-                            <div><span class="meta-label">ROLE:</span> Solo Dev / Technical Artist</div>
-                            <div><span class="meta-label">ENGINE:</span> Unity 6 URP</div>
-                            <div><span class="meta-label">SPECS:</span> Toon Shaders / Crowds / Combat</div>
+                        <div class="meta-grid">
+                            <div><span class="meta-label">ROLE</span> Solo Dev / Technical Artist</div>
+                            <div><span class="meta-label">ENGINE</span> Unity 6 URP</div>
+                            <div><span class="meta-label">FOCUS</span> Combat Feel / Toon Shaders / Crowds</div>
                         </div>
-                        <p class="cyber-desc">One hero with dual blades against hundreds of soldiers. Custom cel shaders, anime impact frames, and a crowd of 300+ at 117 fps.</p>
+                        <p class="card-desc">One hero with two blades against hundreds of soldiers. My own cel shaders, anime-style impact frames, and 300+ soldiers on screen at 117 fps.</p>
                     </div>
                 </article>
 
                 <!-- 02. CHRONO TRACE -->
-                <article class="cyber-card" data-category="vr" onclick="openProjectModal('chrono')">
-                    <div class="cyber-card-media">
+                <article class="project-card" data-category="vr" data-project="chrono" tabindex="0" role="button" aria-label="Open project: Chrono Trace">
+                    <div class="card-media">
                         <span class="card-num">02 / 08</span>
-                        <span class="card-status status-active">• DEPLOYED</span>
-                        <img src="assets/screenshots/chrono-1.webp" alt="Chrono Trace" class="cyber-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        <div class="cyber-placeholder">[ CHRONO TRACE ]</div>
-                        <div class="cyber-hover-overlay">
-                            <span class="target-reticle">+ CHRONO TRACE</span>
-                        </div>
+                        <span class="card-status">COMPLETE</span>
+                        <img src="assets/screenshots/chrono-1.webp" alt="Chrono Trace" class="card-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                        <div class="card-placeholder">[ CHRONO TRACE ]</div>
+                        <div class="card-hover"><span class="card-open">Open project +</span></div>
                     </div>
-                    <div class="cyber-card-info">
+                    <div class="card-info">
                         <h3>CHRONO TRACE</h3>
-                        <div class="cyber-meta-grid">
-                            <div><span class="meta-label">ROLE:</span> Lead PM / Designer</div>
-                            <div><span class="meta-label">ENGINE:</span> Unity VR</div>
-                            <div><span class="meta-label">SPECS:</span> Physics / Locomotion</div>
+                        <div class="meta-grid">
+                            <div><span class="meta-label">ROLE</span> Lead Designer / PM</div>
+                            <div><span class="meta-label">ENGINE</span> Unity VR</div>
+                            <div><span class="meta-label">FOCUS</span> VR Movement / Story Triggers</div>
                         </div>
-                        <p class="cyber-desc">Narrative VR parkour prototype. Authored momentum conservation mechanics and spatial triggers.</p>
+                        <p class="card-desc">Narrative VR parkour prototype. I designed the climbing and momentum movement, and the story beats that trigger along the route.</p>
                     </div>
                 </article>
 
                 <!-- 03. PIRATES OF THE HIGH SEAS -->
-                <article class="cyber-card" data-category="pc" onclick="openProjectModal('pirates')">
-                    <div class="cyber-card-media">
+                <article class="project-card" data-category="pc" data-project="pirates" tabindex="0" role="button" aria-label="Open project: Pirates of the High Seas">
+                    <div class="card-media">
                         <span class="card-num">03 / 08</span>
-                        <span class="card-status status-active">• ACTIVE</span>
-                        <img src="assets/screenshots/pirates-1.webp" alt="Pirates" class="cyber-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        <div class="cyber-placeholder">[ PIRATES OF HIGH SEAS ]</div>
-                        <div class="cyber-hover-overlay">
-                            <span class="target-reticle">+ PIRATES</span>
-                        </div>
+                        <span class="card-status">PLAYABLE</span>
+                        <img src="assets/screenshots/pirates-1.webp" alt="Pirates of the High Seas" class="card-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                        <div class="card-placeholder">[ PIRATES OF THE HIGH SEAS ]</div>
+                        <div class="card-hover"><span class="card-open">Open project +</span></div>
                     </div>
-                    <div class="cyber-card-info">
+                    <div class="card-info">
                         <h3>PIRATES OF THE HIGH SEAS</h3>
-                        <div class="cyber-meta-grid">
-                            <div><span class="meta-label">ROLE:</span> Combat Designer</div>
-                            <div><span class="meta-label">ENGINE:</span> Unity 3D</div>
-                            <div><span class="meta-label">SPECS:</span> Frame Timing / Boss AI</div>
+                        <div class="meta-grid">
+                            <div><span class="meta-label">ROLE</span> Combat Designer</div>
+                            <div><span class="meta-label">ENGINE</span> Unity 3D</div>
+                            <div><span class="meta-label">FOCUS</span> Melee Timing / Boss AI</div>
                         </div>
-                        <p class="cyber-desc">Action hack 'n' slash encounter featuring frame-accurate blocking and stance-reactive boss AI.</p>
+                        <p class="card-desc">Sword-fighting boss encounter with timed blocking, and a boss that changes how it attacks based on how you defend.</p>
                     </div>
                 </article>
 
                 <!-- 04. 2.5D RPG -->
-                <article class="cyber-card" data-category="pc" onclick="openProjectModal('rpg')">
-                    <div class="cyber-card-media">
+                <article class="project-card" data-category="pc" data-project="rpg" tabindex="0" role="button" aria-label="Open project: 2.5D RPG">
+                    <div class="card-media">
                         <span class="card-num">04 / 08</span>
-                        <span class="card-status status-active">• ACTIVE</span>
-                        <img src="assets/screenshots/rpg-1.webp" alt="2.5D RPG" class="cyber-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        <div class="cyber-placeholder">[ 2.5D RPG ]</div>
-                        <div class="cyber-hover-overlay">
-                            <span class="target-reticle">+ 2.5D RPG</span>
-                        </div>
+                        <span class="card-status">PLAYABLE</span>
+                        <img src="assets/screenshots/rpg-1.webp" alt="2.5D RPG" class="card-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                        <div class="card-placeholder">[ 2.5D RPG ]</div>
+                        <div class="card-hover"><span class="card-open">Open project +</span></div>
                     </div>
-                    <div class="cyber-card-info">
+                    <div class="card-info">
                         <h3>2.5D RPG</h3>
-                        <div class="cyber-meta-grid">
-                            <div><span class="meta-label">ROLE:</span> Systems Designer</div>
-                            <div><span class="meta-label">ENGINE:</span> Unity 2.5D</div>
-                            <div><span class="meta-label">SPECS:</span> Input Queue / FSM</div>
+                        <div class="meta-grid">
+                            <div><span class="meta-label">ROLE</span> Systems Designer</div>
+                            <div><span class="meta-label">ENGINE</span> Unity 2.5D</div>
+                            <div><span class="meta-label">FOCUS</span> Turn-Based Combat / Enemy AI</div>
                         </div>
-                        <p class="cyber-desc">Octopath-inspired turn-based encounter with decoupled input queues and health-threshold FSM AI.</p>
+                        <p class="card-desc">Octopath-style turn-based battle. Party commands queue up cleanly, and the enemy changes behavior as its health drops.</p>
                     </div>
                 </article>
 
                 <!-- 05. THE AMBER FORGE -->
-                <article class="cyber-card" data-category="concept mobile" onclick="openProjectModal('amber')">
-                    <div class="cyber-card-media">
+                <article class="project-card" data-category="concept mobile" data-project="amber" tabindex="0" role="button" aria-label="Open project: The Amber Forge">
+                    <div class="card-media">
                         <span class="card-num">05 / 08</span>
-                        <span class="card-status status-spec">• SPEC / GDD</span>
-                        <img src="assets/screenshots/amber-1.webp" alt="The Amber Forge" class="cyber-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        <div class="cyber-placeholder">[ AMBER FORGE ]</div>
-                        <div class="cyber-hover-overlay">
-                            <span class="target-reticle">+ AMBER FORGE</span>
-                        </div>
+                        <span class="card-status status-doc">DESIGN DOC</span>
+                        <img src="assets/screenshots/amber-1.webp" alt="The Amber Forge" class="card-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                        <div class="card-placeholder">[ THE AMBER FORGE ]</div>
+                        <div class="card-hover"><span class="card-open">Open project +</span></div>
                     </div>
-                    <div class="cyber-card-info">
+                    <div class="card-info">
                         <h3>THE AMBER FORGE</h3>
-                        <div class="cyber-meta-grid">
-                            <div><span class="meta-label">ROLE:</span> Game PM / Economy</div>
-                            <div><span class="meta-label">PLATFORM:</span> Mobile GDD</div>
-                            <div><span class="meta-label">SPECS:</span> Live-Ops / Market</div>
+                        <div class="meta-grid">
+                            <div><span class="meta-label">ROLE</span> Game PM / Economy Designer</div>
+                            <div><span class="meta-label">PLATFORM</span> Mobile (design doc)</div>
+                            <div><span class="meta-label">FOCUS</span> Economy / Live-Ops</div>
                         </div>
-                        <p class="cyber-desc">Midcore mobile tycoon concept. Designed time queues, player marketplace models, and server events.</p>
+                        <p class="card-desc">Midcore mobile crafting tycoon: crafting timers, hero expeditions for rare materials, a player market and live events.</p>
                     </div>
                 </article>
 
                 <!-- 06. KING'S ESCAPE -->
-                <article class="cyber-card" data-category="mobile pc" onclick="openProjectModal('kings')">
-                    <div class="cyber-card-media">
+                <article class="project-card" data-category="mobile pc" data-project="kings" tabindex="0" role="button" aria-label="Open project: King's Escape">
+                    <div class="card-media">
                         <span class="card-num">06 / 08</span>
-                        <span class="card-status status-active">• ACTIVE</span>
-                        <img src="assets/screenshots/kings-1.webp" alt="King's Escape" class="cyber-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        <div class="cyber-placeholder">[ KING'S ESCAPE ]</div>
-                        <div class="cyber-hover-overlay">
-                            <span class="target-reticle">+ KING'S ESCAPE</span>
-                        </div>
+                        <span class="card-status">PLAYABLE</span>
+                        <img src="assets/screenshots/kings-1.webp" alt="King's Escape" class="card-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                        <div class="card-placeholder">[ KING'S ESCAPE ]</div>
+                        <div class="card-hover"><span class="card-open">Open project +</span></div>
                     </div>
-                    <div class="cyber-card-info">
+                    <div class="card-info">
                         <h3>KING'S ESCAPE</h3>
-                        <div class="cyber-meta-grid">
-                            <div><span class="meta-label">ROLE:</span> Systems Dev</div>
-                            <div><span class="meta-label">ENGINE:</span> Unity 3D</div>
-                            <div><span class="meta-label">SPECS:</span> Object Pooling</div>
+                        <div class="meta-grid">
+                            <div><span class="meta-label">ROLE</span> Systems Developer</div>
+                            <div><span class="meta-label">ENGINE</span> Unity 3D</div>
+                            <div><span class="meta-label">FOCUS</span> Pooling / Difficulty Curve</div>
                         </div>
-                        <p class="cyber-desc">Endless runner prototype featuring zero-allocation chunk pooling and mathematical difficulty curves.</p>
+                        <p class="card-desc">Endless runner prototype. Track pieces are reused as you run, and the speed ramps up over time to raise the difficulty.</p>
                     </div>
                 </article>
 
                 <!-- 07. SINS OF THE GARRISON -->
-                <article class="cyber-card" data-category="pc" onclick="openProjectModal('sins')">
-                    <div class="cyber-card-media">
+                <article class="project-card" data-category="pc" data-project="sins" tabindex="0" role="button" aria-label="Open project: Sins of the Garrison">
+                    <div class="card-media">
                         <span class="card-num">07 / 08</span>
-                        <span class="card-status status-active">• ACTIVE</span>
-                        <img src="assets/screenshots/sins-1.webp" alt="Sins of the Garrison" class="cyber-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        <div class="cyber-placeholder">[ SINS OF GARRISON ]</div>
-                        <div class="cyber-hover-overlay">
-                            <span class="target-reticle">+ SINS OF GARRISON</span>
-                        </div>
+                        <span class="card-status">PLAYABLE</span>
+                        <img src="assets/screenshots/sins-1.webp" alt="Sins of the Garrison" class="card-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                        <div class="card-placeholder">[ SINS OF THE GARRISON ]</div>
+                        <div class="card-hover"><span class="card-open">Open project +</span></div>
                     </div>
-                    <div class="cyber-card-info">
+                    <div class="card-info">
                         <h3>SINS OF THE GARRISON</h3>
-                        <div class="cyber-meta-grid">
-                            <div><span class="meta-label">ROLE:</span> AI Designer</div>
-                            <div><span class="meta-label">ENGINE:</span> Unity Horror</div>
-                            <div><span class="meta-label">SPECS:</span> Raycast / Audio FSM</div>
+                        <div class="meta-grid">
+                            <div><span class="meta-label">ROLE</span> AI Designer</div>
+                            <div><span class="meta-label">ENGINE</span> Unity (Horror)</div>
+                            <div><span class="meta-label">FOCUS</span> Stealth AI / Sight &amp; Sound</div>
                         </div>
-                        <p class="cyber-desc">Slasher horror AI featuring dual raycast/noise detection radiuses and 4-phase state machines.</p>
+                        <p class="card-desc">Slasher horror prototype. The killer can see and hear you, and switches between patrolling, investigating, chasing and searching.</p>
                     </div>
                 </article>
 
                 <!-- 08. EIFFEL ASCENT -->
-                <article class="cyber-card" data-category="vr concept" onclick="openProjectModal('eiffel')">
-                    <div class="cyber-card-media">
+                <article class="project-card" data-category="vr concept" data-project="eiffel" tabindex="0" role="button" aria-label="Open project: Eiffel Ascent">
+                    <div class="card-media">
                         <span class="card-num">08 / 08</span>
-                        <span class="card-status status-active">• PROTO</span>
-                        <img src="assets/screenshots/eiffel-1.webp" alt="Eiffel Ascent" class="cyber-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
-                        <div class="cyber-placeholder">[ EIFFEL ASCENT ]</div>
-                        <div class="cyber-hover-overlay">
-                            <span class="target-reticle">+ EIFFEL ASCENT</span>
-                        </div>
+                        <span class="card-status">PROTOTYPE</span>
+                        <img src="assets/screenshots/eiffel-1.webp" alt="Eiffel Ascent" class="card-img" loading="lazy" decoding="async" onerror="this.style.display='none';">
+                        <div class="card-placeholder">[ EIFFEL ASCENT ]</div>
+                        <div class="card-hover"><span class="card-open">Open project +</span></div>
                     </div>
-                    <div class="cyber-card-info">
+                    <div class="card-info">
                         <h3>EIFFEL ASCENT</h3>
-                        <div class="cyber-meta-grid">
-                            <div><span class="meta-label">ROLE:</span> VR Developer</div>
-                            <div><span class="meta-label">ENGINE:</span> Unity VR</div>
-                            <div><span class="meta-label">SPECS:</span> Lattice Collision</div>
+                        <div class="meta-grid">
+                            <div><span class="meta-label">ROLE</span> VR Developer</div>
+                            <div><span class="meta-label">ENGINE</span> Unity VR</div>
+                            <div><span class="meta-label">FOCUS</span> VR Climbing / Interaction</div>
                         </div>
-                        <p class="cyber-desc">VR climbing prototype. Designed open ironwork collision matrices and spatial interaction mechanics.</p>
+                        <p class="card-desc">VR climbing prototype on the Eiffel Tower's ironwork: grab the open beams by hand and plant a bomb at the top.</p>
                     </div>
                 </article>
 
             </div>
         </section>
 
-        <!-- MODULE 03: MINI-GAME / TERMINAL HACK -->
-        <section id="hack-module" class="cyber-container">
-            <div class="module-tag">MODULE_03</div>
-            <h2 class="section-title">SYSTEM_SECURITY // ICE_BREAKER</h2>
-
-            <div class="hack-terminal">
-                <div class="hack-header">
-                    <span class="hack-title">[ ENCRYPTED_GDD_ARCHIVE // TARGET_NODE: 0x88F ]</span>
-                    <span class="hack-status" id="hack-status-text">STATUS: ICE_ACTIVE</span>
+        <!-- CONTACT -->
+        <section id="contact" class="container">
+            <div class="section-tag">02 // Contact</div>
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-panel">
+                <p class="contact-lede">Open to game design roles: level, systems and technical design. The fastest way to reach me is email.</p>
+                <div class="contact-links">
+                    <a class="btn-primary" href="mailto:matanbarash@gmail.com">matanbarash@gmail.com</a>
+                    <a class="btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+                    <a class="btn-outline" href="https://github.com/hunterstormsword" target="_blank" rel="noopener">GitHub</a>
                 </div>
+                <p class="contact-meta">Based in Israel · English &amp; Hebrew (native), Japanese (basic)</p>
+            </div>
+        </section>
 
-                <div class="hack-body">
-                    <div class="hack-sidebar">
-                        <p class="hack-instruction">// SELECT THE CORRECT SEQUENCE TO BYPASS ICE ARCHITECTURE</p>
-                        <div class="target-sequence">
-                            <span class="seq-label">TARGET SEQUENCE:</span>
-                            <div class="seq-box" id="target-seq-display">-- -- --</div>
+        <!-- BONUS MINI-GAME (collapsed by default) -->
+        <section id="hack-module" class="container">
+            <details class="egg">
+                <summary>Bonus: crack the archive (mini-game)</summary>
+
+                <div class="hack-terminal">
+                    <div class="hack-header">
+                        <span class="hack-title">[ ENCRYPTED_GDD_ARCHIVE // TARGET_NODE: 0x88F ]</span>
+                        <span class="hack-status" id="hack-status-text">STATUS: ICE_ACTIVE</span>
+                    </div>
+
+                    <div class="hack-body">
+                        <div class="hack-sidebar">
+                            <p class="hack-instruction">// Click the codes in the target order to break the lock.</p>
+                            <div class="target-sequence">
+                                <span class="seq-label">TARGET SEQUENCE:</span>
+                                <div class="seq-box" id="target-seq-display">-- -- --</div>
+                            </div>
+                            <div class="attempts-counter">
+                                <span class="seq-label">ATTEMPTS REMAINING:</span>
+                                <div class="attempts-dots" id="attempts-dots">
+                                    <span class="dot active"></span>
+                                    <span class="dot active"></span>
+                                    <span class="dot active"></span>
+                                </div>
+                            </div>
+                            <button id="reset-hack-btn" class="btn-outline" onclick="initHackGame()">Restart</button>
                         </div>
-                        <div class="attempts-counter">
-                            <span class="seq-label">ATTEMPTS REMAINING:</span>
-                            <div class="attempts-dots" id="attempts-dots">
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
-                                <span class="dot active"></span>
+
+                        <div class="hack-grid-container">
+                            <div class="matrix-grid" id="matrix-grid">
+                                <!-- Injected via JavaScript -->
                             </div>
                         </div>
-                        <button id="reset-hack-btn" class="btn-cyber-outline" onclick="initHackGame()">[ RE-INITIALIZE ]</button>
                     </div>
 
-                    <div class="hack-grid-container">
-                        <div class="matrix-grid" id="matrix-grid">
-                            <!-- Injected via JavaScript -->
+                    <div id="hack-reward-overlay" class="hack-reward-overlay hidden">
+                        <div class="reward-content">
+                            <h3 class="reward-title">ACCESS GRANTED</h3>
+                            <p>You've unlocked a quote from the archive:</p>
+                            <blockquote class="reward-quote"></blockquote>
+                            <button class="btn-primary" onclick="initHackGame()">Play again</button>
                         </div>
                     </div>
                 </div>
-
-                <div id="hack-reward-overlay" class="hack-reward-overlay hidden">
-                    <div class="reward-content">
-                        <h3 class="reward-title">ICE_BROKEN // ACCESS GRANTED</h3>
-                        <p>System decrypted successfully. You've unlocked the confidential design retrospective note:</p>
-                        <blockquote class="reward-quote">
-                            "A great Game PM doesn't just manage scope—they balance player desire with technical reality."
-                        </blockquote>
-                        <button class="btn-cyber-primary" onclick="initHackGame()">[ REPLAY SIMULATION ]</button>
-                    </div>
-                </div>
-            </div>
+            </details>
         </section>
 
         <!-- FOOTER -->
         <footer class="footer">
-            <p>// 2026 MATAN BARASH // SYSTEM ARCHITECTURE COMPLETE</p>
+            <p>© 2026 Matan Barash</p>
         </footer>
 
     </div>
 
-    <!-- DYNAMIC PROJECT MODAL -->
-    <div id="project-modal" class="modal-overlay">
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project details">
         <div class="modal-window">
-            <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="Close">&times;</button>
             <div id="modal-content-body">
                 <!-- Injected via JavaScript -->
             </div>

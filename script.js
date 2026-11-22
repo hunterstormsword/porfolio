@@ -1,76 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const enterBtn = document.getElementById('enter-btn');
-    const landing = document.getElementById('landing');
-    const mainContent = document.getElementById('main-content');
-    const typingText = document.getElementById('typing-text');
-
-    const promptMessage = "Accessing encrypted design files...";
-    let charIndex = 0;
-
-    function typeTerminalMessage() {
-        if (charIndex < promptMessage.length) {
-            typingText.textContent += promptMessage.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeTerminalMessage, 45);
-        }
-    }
-
-    setTimeout(() => {
-        typingText.textContent = "";
-        typeTerminalMessage();
-    }, 800);
-
-    function playDecryptionSound() {
-        try {
-            const AudioContext = window.AudioContext || window.webkitAudioContext;
-            const ctx = new AudioContext();
-
-            const subOsc = ctx.createOscillator();
-            const subGain = ctx.createGain();
-            subOsc.type = 'sine';
-            subOsc.frequency.setValueAtTime(80, ctx.currentTime);
-            subOsc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.6);
-            subGain.gain.setValueAtTime(0.4, ctx.currentTime);
-            subGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
-
-            const chimeOsc = ctx.createOscillator();
-            const chimeGain = ctx.createGain();
-            chimeOsc.type = 'triangle';
-            chimeOsc.frequency.setValueAtTime(523.25, ctx.currentTime + 0.05);
-            chimeOsc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.15);
-            chimeOsc.frequency.setValueAtTime(1046.50, ctx.currentTime + 0.25);
-            chimeGain.gain.setValueAtTime(0.2, ctx.currentTime + 0.05);
-            chimeGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.7);
-
-            subOsc.connect(subGain);
-            subGain.connect(ctx.destination);
-            chimeOsc.connect(chimeGain);
-            chimeGain.connect(ctx.destination);
-
-            subOsc.start(ctx.currentTime);
-            chimeOsc.start(ctx.currentTime + 0.05);
-            subOsc.stop(ctx.currentTime + 0.6);
-            chimeOsc.stop(ctx.currentTime + 0.7);
-        } catch (e) {
-            console.log("Audio blocked");
-        }
-    }
-
-    if (enterBtn) {
-        enterBtn.addEventListener('click', () => {
-            playDecryptionSound();
-            landing.classList.add('fade-out');
-            mainContent.classList.remove('hidden');
-
-            setTimeout(() => {
-                landing.style.display = 'none';
-            }, 800);
-        });
-    }
-
+    initIntro();
     initHackGame();
     initProjectFilters();
+    initProjectCards();
 });
+
+// ==========================================================================
+// SHORT INTRO (plays once per visit, fades out on its own, any input skips)
+// ==========================================================================
+
+function initIntro() {
+    const landing = document.getElementById('landing');
+    const typingText = document.getElementById('typing-text');
+    if (!landing) return;
+
+    let seen = false;
+    try { seen = sessionStorage.getItem('introSeen') === '1'; } catch (e) {}
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (seen || reduced) {
+        landing.classList.add('gone');
+        return;
+    }
+
+    const message = "loading portfolio...";
+    let i = 0;
+    let done = false;
+
+    function type() {
+        if (done || i >= message.length) return;
+        typingText.textContent += message.charAt(i++);
+        setTimeout(type, 35);
+    }
+    type();
+
+    function dismiss() {
+        if (done) return;
+        done = true;
+        try { sessionStorage.setItem('introSeen', '1'); } catch (e) {}
+        landing.classList.add('fade-out');
+        setTimeout(() => landing.classList.add('gone'), 650);
+        ['keydown', 'wheel', 'touchstart'].forEach(ev => window.removeEventListener(ev, dismiss));
+    }
+
+    landing.addEventListener('click', dismiss);
+    ['keydown', 'wheel', 'touchstart'].forEach(ev => window.addEventListener(ev, dismiss, { passive: true }));
+    setTimeout(dismiss, 1700);
+}
+
+// ==========================================================================
+// PROJECT CARDS: click, Enter or Space opens the project
+// ==========================================================================
+
+function initProjectCards() {
+    document.querySelectorAll('.project-card').forEach(card => {
+        const key = card.getAttribute('data-project');
+        card.addEventListener('click', () => openProjectModal(key));
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openProjectModal(key);
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('project-modal');
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeProjectModal();
+        if (e.key === 'ArrowRight') changeSlide(1);
+        if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+}
 
 // ==========================================================================
 // CATEGORY FILTER LOGIC
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initProjectFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.cyber-card');
+    const projectCards = document.querySelectorAll('.project-card');
 
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -186,7 +187,7 @@ const projectData = {
         features: [
             "<strong>Time-Based Crafting Queues:</strong> Balanced multi-tier item creation timers with raw material supply chains.",
             "<strong>Hero Expedition System:</strong> Class-based hero deployment mechanics to secure rare crafting ingredients.",
-            "<strong>Simulated Player Marketplace:</strong> Macro-level supply and demand shifts driving dynamic item valuation.",
+            "<strong>Player Marketplace:</strong> Item prices move with supply and demand across the player base.",
             "<strong>Live-Ops & Community Events:</strong> Server-wide collaborative crafting milestones and rotating event cadences."
         ],
         retrospective: "Designed as a scalable mobile GDD pitch, this project balances long-term player retention with satisfying daily crafting loops."
@@ -200,11 +201,11 @@ const projectData = {
             { type: 'image', src: 'assets/screenshots/kings-3.webp', alt: 'Lane Shifting & Obstacles' }
         ],
         features: [
-            "<strong>Procedural Chunk Pooling:</strong> Memory-managed object pooling recycling terrain chunks behind the player camera.",
-            "<strong>Dynamic Speed Curves:</strong> Mathematical velocity scaling coupled with lane-switching tighteners.",
+            "<strong>Reused Track Pieces:</strong> Track chunks that leave the screen behind the player are recycled to the front instead of being created and destroyed.",
+            "<strong>Difficulty Over Time:</strong> Run speed follows a curve that ramps up over the run, with lane switching kept tight at high speed.",
             "<strong>Modular Power-Up Architecture:</strong> ScriptableObject-driven architecture handling Shields, Magnets, and Multipliers."
         ],
-        retrospective: "Demonstrates clean object management and zero runtime allocation spikes during high-speed endless gameplay loops."
+        retrospective: "Taught me to plan for performance early: reusing objects instead of spawning new ones kept the run smooth even at top speed."
     },
     sins: {
         title: "Sins of the Garrison",
@@ -231,8 +232,8 @@ const projectData = {
             { type: 'image', src: 'assets/screenshots/eiffel-2.webp', alt: 'Tower Lattice Collision' }
         ],
         features: [
-            "<strong>VR XR Climbing Interactors:</strong> Direct hand tracking mapped to ironwork structural grab points.",
-            "<strong>Lattice Geometry Collision:</strong> Optimized collision matrix tracking hand presence across open iron beams.",
+            "<strong>Hand-Over-Hand Climbing:</strong> XR hand controllers grab the tower's ironwork directly.",
+            "<strong>Grabbable Ironwork:</strong> Colliders set up across the open iron beams so hands catch where players expect them to.",
             "<strong>Objective State Tracking:</strong> Spatial interaction sequence for arming and positioning bomb devices."
         ],
         retrospective: "Foundational prototype for Chrono Trace. If rebuilding today, I would introduce dynamic Inverse Kinematics (IK) and surface friction metrics to simulate rain on cold metal."
@@ -304,9 +305,13 @@ function openProjectModal(key) {
         </div>
     `;
 
+    lastFocusedCard = document.activeElement;
     document.getElementById('project-modal').classList.add('active');
     document.body.style.overflow = 'hidden';
+    document.querySelector('#project-modal .modal-close').focus();
 }
+
+let lastFocusedCard = null;
 
 function changeSlide(direction) {
     const slides = document.querySelectorAll('.carousel-slide');
@@ -329,8 +334,12 @@ function closeProjectModal() {
     const activeVideo = document.querySelector('.carousel-slide.active video');
     if (activeVideo) activeVideo.pause();
 
+    // Stop a playing YouTube video by reloading its frame
+    document.querySelectorAll('#modal-content-body iframe').forEach(f => { f.src = f.src; });
+
     document.getElementById('project-modal').classList.remove('active');
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
+    if (lastFocusedCard && lastFocusedCard.focus) lastFocusedCard.focus();
 }
 
 document.getElementById('project-modal').addEventListener('click', (e) => {
