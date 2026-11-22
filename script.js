@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initIntro() {
     const landing = document.getElementById('landing');
-    const typingText = document.getElementById('typing-text');
+    const bootLog = document.getElementById('boot-log');
     if (!landing) return;
 
     let seen = false;
@@ -23,16 +23,31 @@ function initIntro() {
         return;
     }
 
-    const message = "loading portfolio...";
-    let i = 0;
+    const lines = [
+        "> boot portfolio.sys",
+        "  loading projects ........ [OK]",
+        "  compiling cel shaders ... [OK]",
+        "  link established"
+    ];
+    let line = 0;
     let done = false;
 
-    function type() {
-        if (done || i >= message.length) return;
-        typingText.textContent += message.charAt(i++);
-        setTimeout(type, 35);
+    function printLine() {
+        if (done || line >= lines.length) return;
+        const text = lines[line++];
+        const span = document.createElement('span');
+        span.textContent = text.replace('[OK]', '');
+        bootLog.appendChild(span);
+        if (text.includes('[OK]')) {
+            const ok = document.createElement('span');
+            ok.className = 'ok';
+            ok.textContent = '[OK]';
+            bootLog.appendChild(ok);
+        }
+        bootLog.appendChild(document.createTextNode('\n'));
+        setTimeout(printLine, 260);
     }
-    type();
+    printLine();
 
     function dismiss() {
         if (done) return;
@@ -45,7 +60,7 @@ function initIntro() {
 
     landing.addEventListener('click', dismiss);
     ['keydown', 'wheel', 'touchstart'].forEach(ev => window.addEventListener(ev, dismiss, { passive: true }));
-    setTimeout(dismiss, 1700);
+    setTimeout(dismiss, 2000);
 }
 
 // ==========================================================================
