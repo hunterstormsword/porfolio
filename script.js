@@ -105,6 +105,30 @@ function initProjectFilters() {
 // ==========================================================================
 
 const projectData = {
+    musou: {
+        title: "Fantasy Musou (working title)",
+        role: "Solo Developer & Technical Artist | Musou Action, Unity 6 URP, PC (in development)",
+        gallery: [
+            { type: 'image', src: 'assets/screenshots/warriors-1.webp', alt: 'Main menu with the posed hero' },
+            { type: 'image', src: 'assets/screenshots/warriors-2.webp', alt: 'Battle HUD in a crowd fight' },
+            { type: 'image', src: 'assets/screenshots/warriors-3.webp', alt: 'Heavy chain through a crowd of knights' },
+            { type: 'image', src: 'assets/screenshots/warriors-4.webp', alt: 'Full Burst summon cut-in' },
+            { type: 'image', src: 'assets/screenshots/warriors-5.webp', alt: 'Boss entrance cut-in' },
+            { type: 'image', src: 'assets/screenshots/warriors-6.webp', alt: 'Slash arcs and knockdown rings through a combo' },
+            { type: 'image', src: 'assets/screenshots/warriors-7.webp', alt: 'Final cel look on the hero' },
+            { type: 'image', src: 'assets/screenshots/warriors-8.webp', alt: 'Sakuragawa Village Main Street' },
+            { type: 'image', src: 'assets/screenshots/warriors-9.webp', alt: 'Procedural toon water' }
+        ],
+        features: [
+            "<strong>Combat Feel:</strong> Data-driven combo tree (light string, heavy branches, air string, supers) with input buffering, dodge cancels, hit-stop and screen shake. Melee clips are time-warped onto the attack timings, so the play-tested feel never changes.",
+            "<strong>Custom Toon Rendering:</strong> Hand-written URP HLSL cel shaders with ink outlines and a per-scene slider that blends the environment toward PBR while characters stay cel. Procedural toon water.",
+            "<strong>Anime Impact Frames & Cut-ins:</strong> A full-screen Render Graph pass (rim-line, ink silhouette, neon cards with speed lines) and comic-panel cut-ins rendered from studio doubles.",
+            "<strong>Crowds at Scale:</strong> Pooled soldiers with no colliders, flow-field pathing in Burst jobs, and animation update-rate LOD. A build holds 117 fps with 314 soldiers packed around the hero.",
+            "<strong>Battlefield Systems:</strong> Capturable bases with morale, gatekeeper officers, an AI Mentor ally with an affinity-driven Awaken mode and joint finisher, a boss, and squads marching out of barracks.",
+            "<strong>Level Tools:</strong> A 600 x 750 m village built by editor tools from the design doc, then dressed with a converted environment pack."
+        ],
+        retrospective: "A solo vertical slice built to show game feel and technical art together. Locking the combat timings first and fitting animation, VFX and cut-ins to them kept every art pass from breaking the feel. Character models, melee animations and the village art are store packs; the shaders, VFX, tools, systems and level layout are my own."
+    },
     chrono: {
         title: "Chrono Trace",
         role: "Lead Designer & Product Manager | VR Parkour Prototype",
