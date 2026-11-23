@@ -126,14 +126,14 @@ const projectData = {
         role: "Solo Developer & Technical Artist | Musou Action, Unity 6 URP, PC (in development)",
         gallery: [
             { type: 'image', src: 'assets/screenshots/warriors-1.webp', alt: 'Main menu with the posed hero' },
-            { type: 'image', src: 'assets/screenshots/warriors-2.webp', alt: 'Battle HUD in a crowd fight' },
-            { type: 'image', src: 'assets/screenshots/warriors-3.webp', alt: 'Heavy chain through a crowd of knights' },
-            { type: 'image', src: 'assets/screenshots/warriors-4.webp', alt: 'Full Burst summon cut-in' },
             { type: 'image', src: 'assets/screenshots/warriors-5.webp', alt: 'Boss entrance cut-in' },
-            { type: 'image', src: 'assets/screenshots/warriors-6.webp', alt: 'Slash arcs and knockdown rings through a combo' },
-            { type: 'image', src: 'assets/screenshots/warriors-7.webp', alt: 'Final cel look on the hero' },
+            { type: 'image', src: 'assets/screenshots/warriors-4.webp', alt: 'Full Burst summon cut-in' },
             { type: 'image', src: 'assets/screenshots/warriors-8.webp', alt: 'Sakuragawa Village Main Street' },
-            { type: 'image', src: 'assets/screenshots/warriors-9.webp', alt: 'Procedural toon water' }
+            { type: 'image', src: 'assets/screenshots/warriors-7.webp', alt: 'Final cel look on the hero' },
+            { type: 'image', src: 'assets/screenshots/warriors-2.webp', alt: 'Battle HUD in a crowd fight (greybox arena)' },
+            { type: 'image', src: 'assets/screenshots/warriors-3.webp', alt: 'Heavy chain through a crowd of knights (frame sheet)' },
+            { type: 'image', src: 'assets/screenshots/warriors-9.webp', alt: 'Procedural toon water (shader test)' },
+            { type: 'image', src: 'assets/screenshots/warriors-6.webp', alt: 'Slash arcs on the capsule prototype' }
         ],
         features: [
             "<strong>Combat Feel:</strong> Data-driven combo tree (light string, heavy branches, air string, supers) with input buffering, dodge cancels, hit-stop and screen shake. Melee clips are time-warped onto the attack timings, so the play-tested feel never changes.",
